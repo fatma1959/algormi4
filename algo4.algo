@@ -1,0 +1,20 @@
+ALGORITHM selection
+VAR
+   arr :Array_of_INTEGER[100];
+   i,j:INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr.length-1 STEP step  DO
+        j:=i;
+        WHILE (j>0 AND arr[j]<arr[j-1]) DO
+            permit(arr[j],arr[j-1])
+        END_WHILE
+    END_FOR
+END
+PROCEDURE permit(var a,b :INTEGER)
+VAR
+    temp:INTEGER;
+BEGIN
+    temp:=a;
+    a:=b;
+    b:=temp;
+END
